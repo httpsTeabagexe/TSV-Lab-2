@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    # пробрасываем 8000 порт наружу на localhost
+    ports:
+      - "127.0.0.1:${TSV_PORT:-8000}:8000"
+    volumes:
+      - tasks-data:/app/data
+
+volumes:
+  tasks-data:
